@@ -85,7 +85,7 @@ export default function Header() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-sky-500 to-sky-700">
                 <Earth className="h-5 w-5 text-white" />
               </div>
-              <span className="bg-gradient-to-r from-sky-500 to-sky-700 bg-clip-text text-xl font-bold text-transparent">
+              <span className="bg-gradient-to-r from-sky-100 to-sky-300 bg-clip-text text-xl font-bold text-transparent">
                 Nova Receptivo
               </span>
             </a>
@@ -104,7 +104,7 @@ export default function Header() {
               >
                 <a
                   href={item.href}
-                  className="flex items-center space-x-1 font-medium text-sky-300 transition-colors duration-200 hover:text-sky-500"
+                  className="flex items-center space-x-1 font-medium text-gray-300 transition-colors duration-200 hover:text-gray-700"
                 >
                   <span>{item.name}</span>
                   {item.hasDropdown && (

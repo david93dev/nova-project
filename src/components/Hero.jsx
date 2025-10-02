@@ -14,24 +14,24 @@ import cgImage from "@/assets/cgHero.png";
 export default function Hero() {
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0e2938] pt-32 pb-10 font-light text-white antialiased md:pt-20 md:pb-16"
+      className="relative w-full overflow-hidden bg-[#e0f2fe] pt-32 pb-10 font-light text-white antialiased md:pt-20 md:pb-16"
       style={{
-        background: "linear-gradient(135deg, #0e2938 0%, #150d27 100%)",
+        background:
+          "linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #0284c7 100%)",
       }}
     >
-      {/* Radial Background Effects */}
       <div
         className="absolute top-0 right-0 h-1/2 w-1/2"
         style={{
           background:
-            "radial-gradient(circle at 70% 30%, rgba(155, 135, 245, 0.15) 0%, rgba(13, 10, 25, 0) 60%)",
+            "radial-gradient(circle at 70% 30%, rgba(255, 215, 0, 0.2) 0%, rgba(13, 10, 25, 0) 70%)",
         }}
       />
       <div
-        className="absolute top-0 left-0 h-1/2 w-1/2 -scale-x-100"
+        className="absolute bottom-0 left-0 h-1/2 w-1/2"
         style={{
           background:
-            "radial-gradient(circle at 70% 30%, rgba(155, 135, 245, 0.15) 0%, rgba(13, 10, 25, 0) 60%)",
+            "radial-gradient(circle at 30% 70%, rgba(255, 166, 0, 0.2) 0%, rgba(13, 10, 25, 0) 70%)",
         }}
       />
 
@@ -42,14 +42,14 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="mb-6 inline-block rounded-full border border-[#9b87f5]/30 px-3 py-1 text-xs text-[#9b87f5]">
+          <span className="mb-6 inline-block rounded-full border border-white/30 px-3 py-1 text-xs text-white">
             TURISMO EM CAMPINA GRANDE
           </span>
-          <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-light md:text-5xl lg:text-7xl">
+          <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-extrabold md:text-5xl lg:text-7xl">
             Descubra a magia do{" "}
-            <span className="text-[#9b87f5]">Ônibus do Forró</span>
+            <span className="text-green-600">Ônibus do Forró</span>
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/60 md:text-xl">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
             Viva uma experiência única em Campina Grande! Música ao vivo,
             tradição nordestina e os melhores roteiros turísticos em um só
             lugar. Explore a cidade de um jeito inesquecível a bordo do Ônibus
