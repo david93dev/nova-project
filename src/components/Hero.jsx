@@ -14,12 +14,27 @@ import cgImage from "@/assets/cgHero.png";
 export default function Hero() {
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#e0f2fe] pt-32 pb-10 font-light text-white antialiased md:pt-20 md:pb-16"
-      style={{
-        background:
-          "linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #0284c7 100%)",
-      }}
-    >
+  className="relative w-full overflow-hidden pt-32 pb-10 text-white font-light antialiased md:pt-20 md:pb-16"
+  style={{
+  background: `
+    linear-gradient(-45deg, #fcd34d, #f87171, #60a5fa, #34d399)
+  `,
+  backgroundSize: "400% 400%",
+  animation: "gradientMove 15s ease infinite",
+}}
+>
+<style>
+{`
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+`}
+</style>
+
+
+
       <div
         className="absolute top-0 right-0 h-1/2 w-1/2"
         style={{
@@ -47,7 +62,7 @@ export default function Hero() {
           </span>
           <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-extrabold md:text-5xl lg:text-7xl">
             Descubra a magia do{" "}
-            <span className="text-green-600">Ônibus do Forró</span>
+            <span className="text-green-400">Ônibus do Forró</span>
           </h1>
           <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
             Viva uma experiência única em Campina Grande! Música ao vivo,
@@ -56,33 +71,7 @@ export default function Hero() {
             do Forró.
           </p>
 
-          <div className="mb-10 flex flex-col items-center justify-center gap-4 sm:mb-0 sm:flex-row">
-            <a
-              href="/pacotes"
-              className="neumorphic-button hover:shadow-[0_0_20px_rgba(155,135,245,0.5)] relative w-full overflow-hidden rounded-full border border-white/10 bg-gradient-to-b from-white/10 to-white/5 px-8 py-4 text-white shadow-lg transition-all duration-300 hover:border-[#9b87f5]/30 sm:w-auto"
-            >
-              Ver Pacotes
-            </a>
-            <a
-              href="#como-funciona"
-              className="flex w-full items-center justify-center gap-2 text-white/70 transition-colors hover:text-white sm:w-auto"
-            >
-              <span>Saiba como funciona</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </a>
-          </div>
+    
         </motion.div>
 
         {/* Images Section */}
