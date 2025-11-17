@@ -7,9 +7,12 @@ function NumberCounter({ value }) {
   return <span>{value.toLocaleString()}</span>;
 }
 
+
+
+
 function StatItem({ value, label, icon, delay = 0, color }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
     <motion.div
@@ -58,7 +61,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden py-16 md:py-24 bg-gray-50">
+    <section id="quem-somos" className="relative w-full overflow-hidden py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         {/* Cabeçalho */}
         <div className="mx-auto mb-16 max-w-3xl text-center">

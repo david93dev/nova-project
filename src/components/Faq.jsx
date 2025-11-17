@@ -58,7 +58,7 @@ const fadeInAnimationVariants = {
 
 export default function Faq() {
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden">
+    <section id='faq' className="relative py-16 md:py-20 overflow-hidden">
       {/* Background gradients com tons de azul e clima junino */}
       <div
         className="absolute inset-0"

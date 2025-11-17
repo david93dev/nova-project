@@ -69,11 +69,12 @@ export default function FeatureSteps() {
   };
 
   return (
-    <div className={'p-8 md:p-12'}>
+   <section id='servicos' className='my-20'>
+     <div className={'p-8 md:p-12'}>
       <div className="mx-auto w-full max-w-7xl">
         <div className="relative mx-auto mb-12 max-w-2xl sm:text-center">
           <div className="relative z-10">
-            <h2 className="font-geist text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+            <h2 className="font-geist mt-8 text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
               Nossos Serviços
             </h2>
             <p className="font-geist text-foreground/60 mt-3">
@@ -170,5 +171,6 @@ export default function FeatureSteps() {
         </div>
       </div>
     </div>
+   </section>
   );
 }

@@ -1,79 +1,83 @@
 import {
-  Dribbble,
   Facebook,
-  Github,
   Instagram,
   Mail,
   MapPin,
   Phone,
-  Twitter,
 } from "lucide-react";
-import { Link } from "react-router-dom"; // ✅ substitui o next/link
+import { Link } from "react-router-dom";
+import  logo  from '../../assets/logo-h.png'
 
 const data = {
-  facebookLink: "https://facebook.com/mvpblocks",
-  instaLink: "https://instagram.com/mvpblocks",
-  twitterLink: "https://twitter.com/mvpblocks",
-  githubLink: "https://github.com/mvpblocks",
-  dribbbleLink: "https://dribbble.com/mvpblocks",
+  social: {
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+  },
+
   services: {
-    webdev: "/web-development",
-    webdesign: "/web-design",
-    marketing: "/marketing",
-    googleads: "/google-ads",
+    onibusForro: "/onibus-do-forro",
+    passeios: "/passeios",
+    fretamento: "/fretamento",
+    transfer: "/transfer",
   },
+
   about: {
-    history: "/company-history",
-    team: "/meet-the-team",
-    handbook: "/employee-handbook",
-    careers: "/careers",
+    history: "/historia",
+    team: "/equipe",
+    mission: "/missao-visao-valores",
+    careers: "/trabalhe-conosco",
   },
+
   help: {
-    faqs: "/faqs",
-    support: "/support",
-    livechat: "/live-chat",
+    faqs: "/duvidas-frequentes",
+    support: "/suporte",
+    whatsapp: "/contato-whatsapp",
   },
+
   contact: {
-    email: "hello@mvpblocks.com",
-    phone: "+91 8637373116",
-    address: "Kolkata, West Bengal, India",
+    email: "contato@novaturismo.com.br",
+    phone: "(83) 99999-9999",
+    address: "Campina Grande – PB, Brasil",
   },
+
   company: {
-    name: "Mvpblocks",
+    name: "Nova Turismo",
     description:
-      "Building beautiful and functional web experiences with modern technologies. We help startups and businesses create their digital presence.",
-    logo: "https://i.postimg.cc/j5dW4vFd/Mvpblocks.webp",
+      "Especialistas em turismo receptivo, passeios culturais e experiências únicas em Campina Grande. Transformamos sua viagem em memórias inesquecíveis.",
+    logo: "/logo-nova.png", // coloque o seu logo aqui
   },
 };
 
+// Redes sociais disponíveis
 const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: data.facebookLink },
-  { icon: Instagram, label: "Instagram", href: data.instaLink },
-  { icon: Twitter, label: "Twitter", href: data.twitterLink },
-  { icon: Github, label: "GitHub", href: data.githubLink },
-  { icon: Dribbble, label: "Dribbble", href: data.dribbbleLink },
+  { icon: Facebook, label: "Facebook", href: data.social.facebook },
+  { icon: Instagram, label: "Instagram", href: data.social.instagram },
 ];
 
+// Links "Sobre"
 const aboutLinks = [
-  { text: "Company History", to: data.about.history },
-  { text: "Meet the Team", to: data.about.team },
-  { text: "Employee Handbook", to: data.about.handbook },
-  { text: "Careers", to: data.about.careers },
+  { text: "Nossa História", to: data.about.history },
+  { text: "Equipe", to: data.about.team },
+  { text: "Missão, Visão e Valores", to: data.about.mission },
+  { text: "Trabalhe Conosco", to: data.about.careers },
 ];
 
+// Links "Serviços"
 const serviceLinks = [
-  { text: "Web Development", to: data.services.webdev },
-  { text: "Web Design", to: data.services.webdesign },
-  { text: "Marketing", to: data.services.marketing },
-  { text: "Google Ads", to: data.services.googleads },
+  { text: "Ônibus do Forró", to: data.services.onibusForro },
+  { text: "Passeios e Experiências", to: data.services.passeios },
+  { text: "Fretamento de Veículos", to: data.services.fretamento },
+  { text: "Transfers e Transporte", to: data.services.transfer },
 ];
 
+// Links úteis
 const helpfulLinks = [
-  { text: "FAQs", to: data.help.faqs },
-  { text: "Support", to: data.help.support },
-  { text: "Live Chat", to: data.help.livechat, hasIndicator: true },
+  { text: "Perguntas Frequentes", to: data.help.faqs },
+  { text: "Suporte", to: data.help.support },
+  { text: "Contato via WhatsApp", to: data.help.whatsapp, hasIndicator: true },
 ];
 
+// Contatos
 const contactInfo = [
   { icon: Mail, text: data.contact.email },
   { icon: Phone, text: data.contact.phone },
@@ -82,14 +86,14 @@ const contactInfo = [
 
 export default function Footer4Col() {
   return (
-    <footer className="bg-secondary dark:bg-secondary/20 mt-16 w-full place-self-end rounded-t-xl">
+    <footer className="bg-secondary dark:bg-secondary/20 mt-16 w-full rounded-t-xl">
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {/* ==== Coluna da empresa ==== */}
+          {/* ==== Coluna da Empresa ==== */}
           <div>
             <div className="text-primary flex justify-center gap-2 sm:justify-start">
               <img
-                src={data.company.logo || "/placeholder.svg"}
+                src={logo}
                 alt="logo"
                 className="h-8 w-8 rounded-full"
               />
@@ -100,6 +104,7 @@ export default function Footer4Col() {
               {data.company.description}
             </p>
 
+            {/* Redes sociais */}
             <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
               {socialLinks.map(({ icon: Icon, label, href }) => (
                 <li key={label}>
@@ -107,7 +112,7 @@ export default function Footer4Col() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition"
+                    className="text-primary hover:text-primary/70 transition"
                   >
                     <span className="sr-only">{label}</span>
                     <Icon className="size-6" />
@@ -117,11 +122,12 @@ export default function Footer4Col() {
             </ul>
           </div>
 
-          {/* ==== Outras seções ==== */}
+          {/* ==== Outras Seções ==== */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
-            {/* About */}
+            
+            {/* Sobre */}
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">About Us</p>
+              <p className="text-lg font-medium">Sobre Nós</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {aboutLinks.map(({ text, to }) => (
                   <li key={text}>
@@ -136,9 +142,9 @@ export default function Footer4Col() {
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Serviços */}
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Our Services</p>
+              <p className="text-lg font-medium">Serviços</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {serviceLinks.map(({ text, to }) => (
                   <li key={text}>
@@ -153,23 +159,25 @@ export default function Footer4Col() {
               </ul>
             </div>
 
-            {/* Helpful Links */}
+            {/* Links Úteis */}
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Helpful Links</p>
+              <p className="text-lg font-medium">Links Úteis</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {helpfulLinks.map(({ text, to, hasIndicator }) => (
                   <li key={text}>
                     <Link
                       to={to}
-                      className={`${
+                      className={
                         hasIndicator
                           ? "group flex justify-center gap-1.5 sm:justify-start"
                           : "text-secondary-foreground/70 transition hover:text-primary"
-                      }`}
+                      }
                     >
                       <span className="text-secondary-foreground/70 transition group-hover:text-primary">
                         {text}
                       </span>
+
+                      {/* bolinha piscando do WhatsApp */}
                       {hasIndicator && (
                         <span className="relative flex size-2">
                           <span className="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
@@ -182,20 +190,21 @@ export default function Footer4Col() {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Contato */}
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Contact Us</p>
+              <p className="text-lg font-medium">Contato</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {contactInfo.map(({ icon: Icon, text, isAddress }) => (
                   <li key={text}>
                     <div className="flex items-center justify-center gap-1.5 sm:justify-start">
-                      <Icon className="text-primary size-5 shrink-0 shadow-sm" />
+                      <Icon className="text-primary size-5 shrink-0" />
+
                       {isAddress ? (
-                        <address className="text-secondary-foreground/70 -mt-0.5 flex-1 not-italic transition">
+                        <address className="text-secondary-foreground/70 not-italic">
                           {text}
                         </address>
                       ) : (
-                        <span className="text-secondary-foreground/70 flex-1 transition">
+                        <span className="text-secondary-foreground/70">
                           {text}
                         </span>
                       )}
@@ -204,6 +213,7 @@ export default function Footer4Col() {
                 ))}
               </ul>
             </div>
+
           </div>
         </div>
 
@@ -211,10 +221,10 @@ export default function Footer4Col() {
         <div className="mt-12 border-t pt-6">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
             <p className="text-sm">
-              <span className="block sm:inline">All rights reserved.</span>
+              <span className="block sm:inline">Todos os direitos reservados.</span>
             </p>
 
-            <p className="text-secondary-foreground/70 mt-4 text-sm transition sm:order-first sm:mt-0">
+            <p className="text-secondary-foreground/70 mt-4 text-sm sm:order-first sm:mt-0">
               &copy; 2025 {data.company.name}
             </p>
           </div>

@@ -16,6 +16,7 @@ import onibusImg from "@/assets/onibus-turismo.png"; // 🚌 sua imagem de ônib
 export default function Hero() {
   return (
     <section
+      id="home"
       className="relative w-full overflow-hidden pt-36 pb-10 text-white font-light antialiased md:pt-28 md:pb-16"
       style={{
         background: `
